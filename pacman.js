@@ -806,7 +806,7 @@ var PACMAN = (function () {
         ctx.font      = "14px BDCartoonShoutRegular";
         var width = ctx.measureText(text).width,
             x     = ((map.width * map.blockSize) - width) / 2;
-        ctx.fillText(text, x, (map.height * 10) + 8);
+        ctx.fillText(text, x, (map.height * 10) + 15);
     }
 
     function soundDisabled() {
@@ -1030,13 +1030,13 @@ var PACMAN = (function () {
     function init(wrapper, root) {
 
         var i, len, ghost,
-            blockSize = wrapper.offsetWidth / 19,
-            canvas    = document.createElement("canvas");
-
+            blockSize = wrapper.offsetWidth / 19;
+           // canvas    = document.createElement("canvas");
+		canvas = document.getElementById("canvas");
         canvas.setAttribute("width", (blockSize * 19) + "px");
         canvas.setAttribute("height", (blockSize * 22) + 30 + "px");
 
-        wrapper.appendChild(canvas);
+        //wrapper.appendChild(canvas);
 
         ctx  = canvas.getContext('2d');
 
